@@ -4,7 +4,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   Card1C:{
-    height:windowHeight-180,
+    // height:windowHeight-180,
     backgroundColor:'#171716',
     borderTopLeftRadius:50,
     borderBottomLeftRadius:50,

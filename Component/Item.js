@@ -1,12 +1,13 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
+import Animated, { Extrapolate, interpolate, useAnimatedStyle } from 'react-native-reanimated'
 const styles = StyleSheet.create({
   BottomContainer:{
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'space-around',
     paddingVertical:10,
-    top:25
+    
   },
   IMG:{
     width:50,
@@ -27,7 +28,14 @@ const styles = StyleSheet.create({
 
 })
 
-const Item = ({item}) => {
+const Item = ({item,translationY}) => {
+  const TransForm=useAnimatedStyle(()=>{
+    return{
+      transform:[{
+        translateY:interpolate(translationY.value,[0,100],[-400],Extrapolate.CLAMP)
+      }]
+    }
+  })
   return (
     <View style={[styles.BottomContainer]}>
         <Image
