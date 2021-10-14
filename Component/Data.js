@@ -2,32 +2,32 @@
   {
     id:"1",
     
-    image:"https://image.flaticon.com/icons/png/512/27/27130.png",
+    img:"http://images.ctfassets.net/58l7lmmaka1i/2jqTg1i70ce8G6yUyIi624/77fcf976d461fd96715da306b0afec34/cover.jpg",
     name:"Entertainment",
     price:"$900"
   },
   {
     id:"2",
-    image:"https://cdn.pixabay.com/photo/2017/02/17/11/51/icon-2073971_960_720.png",
+    img:"https://weart.co/v2/wp-content/uploads/2017/05/WE_ART_DAVID_BLACK_1705_2.jpg",
     name:"Food & Drinks",
     price:"$1000"
   },
   {
     id:"3",
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpIIuYXyydfbL8jGle-R7O_Ze55Ig3pkxuQA&usqp=CAU",
+    img:"https://designculture.com.br/wp-content/uploads/2017/06/main03.jpg",
     name:"Gyme",
     price:"$1000"
   },
   
   {
     id:"4",
-    image:"https://t4.ftcdn.net/jpg/03/47/13/43/360_F_347134350_dhjJjzA1fuGvXOyNgCJYfOEby04ljhEC.jpg",
+    img:"https://media.gq.com/photos/5d39cba1a66ff60008318e25/16:9/w_2560%2Cc_limit/stearns-tout.jpg",
     name:" Comunicate",
     price:"$1200"
   },
   {
     id:"5",
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEIU2Yf0bNjrWH69gIRFmi9dRU_Q56hgBrsg&usqp=CAU",
+    img:"https://weart.co/v2/wp-content/uploads/2017/05/WE_ART_DAVID_BLACK_1705_3.jpg",
    
     name:"Shoping",
     price:"$1000"
@@ -37,7 +37,7 @@
   
   {
     id:"6",
-    image:"https://cdn2.iconfinder.com/data/icons/grocery-store-solid/64/Grocery_food-36-512.png",
+    img:"https://weart.co/v2/wp-content/uploads/2017/05/WE_ART_DAVID_BLACK_1705_2.jpg",
     name:"Grocery",
     price:"$1000"
   }

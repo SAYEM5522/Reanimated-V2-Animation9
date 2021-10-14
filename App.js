@@ -9,26 +9,21 @@ import Item from './Component/Item';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
   
   },
   ViewContainer:{
     top:25
   },
-  BottomContainer:{
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'space-around',
-    paddingVertical:10,
+  Context:{
+    marginLeft:25,
+    fontSize:18,
+    fontWeight:'bold',
+    top:25,
+    color:'white'
+
+  },
   
-    
-  },
-  IMG:{
-    width:100,
-    height:50,
-    resizeMode:'contain',
-    left:-25
-  },
 });
 export default function App() {
   const Y = useSharedValue(0);
@@ -59,8 +54,14 @@ export default function App() {
       }]
     };
   });
-
+  const ItemHeight=60
+  const getItemLayout = (data, index) => ({
+    length: ItemHeight,
+    offset: ItemHeight * index,
+    index,
+  });
   const renderItem=({item,index})=>{
+
     return(
     <>
     <Item item={item} index={index} />
@@ -76,6 +77,8 @@ export default function App() {
        </Animated.View>
      </PanGestureHandler>
      {/* <View> */}
+     <Text style={[styles.Context]}>Transactions</Text>
+
      <AnimatedFlatlist
         data={data}
         keyExtractor={(item)=>item.id}
@@ -83,6 +86,7 @@ export default function App() {
         showsVerticalScrollIndicator={false}
         onScroll={scrollHandler}
         scrollEventThrottle={16}
+        getItemLayout={getItemLayout}
         />
      {/* </View> */}
       <StatusBar style="dark" />

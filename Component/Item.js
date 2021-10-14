@@ -6,29 +6,39 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'space-around',
     paddingVertical:10,
-  
-    
+    top:25
   },
   IMG:{
-    width:100,
+    width:50,
     height:50,
-    resizeMode:'contain',
-    left:-25
+    left:-10,
+    borderRadius:25
   },
+  Text1:{
+    fontSize:16,
+    fontWeight:'bold',
+    color:'white'
+  },
+  Text2:{
+    fontSize:16,
+    fontWeight:'bold',
+    color:'white'
+  }
+
 })
 
 const Item = ({item}) => {
   return (
     <View style={[styles.BottomContainer]}>
         <Image
-        source={{uri:item.image}}
+        source={{uri:item.img}}
         style={styles.IMG}
         />
-        <View>
-          <Text style={{fontSize:16,fontWeight:'bold',}}>{item.name}</Text>
-          <Text >Transparent</Text>
+        <View style={{left:-60}}>
+          <Text style={styles.Text1}>{item.name}</Text>
+          <Text style={{color:'white'}}>Transparent</Text>
         </View>
-        <Text style={{fontSize:16,fontWeight:'bold',}}>{item.price}</Text>
+        <Text style={styles.Text2}>{item.price}</Text>
       </View>
   )
 }
