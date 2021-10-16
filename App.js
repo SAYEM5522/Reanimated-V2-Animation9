@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './Screen/HomeScreen';
 import ItemScreen from './Screen/ItemScreen';
+import ItemScreen2 from './Screen/ItemScreen2';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
@@ -23,6 +24,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen options={{headerShown:false}} name="HomeScreen" component={HomeScreen} />
         <Stack.Screen options={{headerShown:false}} name="ItemScreen" component={ItemScreen} />
+        <Stack.Screen options={{headerShown:false}} name="ItemScreen2" component={ItemScreen2} />
 
       </Stack.Navigator>
     </NavigationContainer>
