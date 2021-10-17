@@ -6,10 +6,10 @@ import { Ionicons } from '@expo/vector-icons';
 const Header = () => {
   return (
     <View style={styles.Header}>
-     <AntDesign name="menu-fold" size={24} color="black" />
+     <AntDesign name="menu-fold" size={24} color="white" />
      <View style={styles.Icon}>
-     <EvilIcons name="search" size={33} style={{right:20}} color="black" />
-     <Ionicons name="lock-closed-outline" size={24} color="black" />
+     <EvilIcons name="search" size={33} style={{right:20}} color="white" />
+     <Ionicons name="lock-closed-outline" size={24} color="white" />
      </View>
     </View>
   )
