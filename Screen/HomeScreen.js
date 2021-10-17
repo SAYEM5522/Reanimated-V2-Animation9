@@ -20,8 +20,16 @@ const styles = StyleSheet.create({
     borderTopLeftRadius:30,
     borderTopRightRadius:30,
     backgroundColor:'#fff',
-    top:-HeaderHeight*2.5
+    top:-HeaderHeight*3.2,
+  
 
+  },
+  TextC:{
+    fontSize:35,
+    fontWeight:'bold',
+    color:'white',
+    top:-HeaderHeight*4.4,
+    left:50
   }
 })
 const HomeScreen = () => {
@@ -53,11 +61,12 @@ const HomeScreen = () => {
     },
     onActive: (event, ctx) => {
       y.value = ctx.startX + event.translationY;
+
     },
     onEnd: (_) => {
       y.value = withSpring(0,config);
-      if(y.value>40){
-        runOnJS(TranX)(!Change)
+      if(y.value>30){
+        runOnJS(TranX)(true)
         }
     },
   });
@@ -71,6 +80,11 @@ const HomeScreen = () => {
       ],
     };
   });
+  const OpacityAnimation =useAnimatedStyle(()=>{
+    return{
+      opacity:Change?1:0
+    }
+  })
 
   return (
     <View>
@@ -81,6 +95,7 @@ const HomeScreen = () => {
         source={{uri:(Change)?(Img2):(Img1)}}
         style={styles.Image}
         />
+        <Animated.Text style={[styles.TextC,OpacityAnimation]}>Virtual try-on </Animated.Text>
         <PanGestureHandler onGestureEvent={gestureHandler}>
         <Animated.View style={[styles.ViewC,animatedStyle]}>
 
