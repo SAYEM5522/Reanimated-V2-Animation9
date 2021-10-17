@@ -19,7 +19,7 @@ export default Header
 
 const styles = StyleSheet.create({
   Header:{
-    height:90,
+    height:80,
     width:'100%',
     flexDirection:'row',
     alignItems:'center',
