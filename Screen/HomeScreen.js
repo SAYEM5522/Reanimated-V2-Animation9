@@ -107,6 +107,9 @@ const HomeScreen = () => {
 
     }
   })
+  const onPress=()=>{
+    navigation.push("ItemScreen")
+  }
   const IconA1=useAnimatedStyle(()=>{
     return{
       transform:[{
@@ -151,7 +154,7 @@ const HomeScreen = () => {
           <AntDesign name="setting" size={24} color="black" />
           </Animated.View>
           <Animated.View style={[styles.Icon,IconA2]}>
-          <AntDesign name="caretdown" size={24} color="black" />
+          <AntDesign name="caretdown" onPress={onPress} size={24} color="black" />
           </Animated.View>
           <Animated.View style={[styles.Icon,IconA3]}>
           <AntDesign name="hearto" size={24} color="black" />
