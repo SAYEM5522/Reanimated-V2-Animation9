@@ -3,7 +3,8 @@ import { Dimensions, Image, Pressable, StatusBar, StyleSheet, Text, View } from 
 import { useNavigation } from '@react-navigation/native';
 import Header from '../Component/Header';
 import { PanGestureHandler } from 'react-native-gesture-handler';
-import Animated, { runOnJS, useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
+import Animated, { Extrapolate, interpolate, runOnJS, useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
+import { AntDesign } from '@expo/vector-icons';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const HeaderHeight=80;
@@ -12,7 +13,8 @@ const styles = StyleSheet.create({
     height:windowHeight/2,
     width:windowWidth,
     top:-HeaderHeight,
-    zIndex:-1000
+    zIndex:-1000,
+    position:'relative'
   },
   ViewC:{
     height:(windowHeight-HeaderHeight*2),
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius:30,
     borderTopRightRadius:30,
     backgroundColor:'#fff',
-    top:-HeaderHeight*3.2,
+    top:-HeaderHeight*3.5,
   
 
   },
@@ -30,6 +32,19 @@ const styles = StyleSheet.create({
     color:'white',
     top:-HeaderHeight*4.4,
     left:50
+  },
+  IconList:{
+    flexDirection:'row',
+    alignItems:'center',
+    width:windowWidth/3,
+    alignSelf:'center',
+    position:'absolute'
+  },
+  Icon:{
+    padding:7,
+    backgroundColor:'#fff',
+    borderRadius:50,
+    marginRight:20
   }
 })
 const HomeScreen = () => {
@@ -75,14 +90,50 @@ const HomeScreen = () => {
     return {
       transform: [
         {
-          translateY:clamp(y.value,0,70)
+          translateY:clamp(y.value,0,60)
         },
       ],
     };
   });
+  const IconTransform=useAnimatedStyle(()=>{
+    return{
+    
+      top:80,
+      opacity:Change?1:0,
+      // interpolate(y.value,[0,60],[150,80],Extrapolate.CLAMP),
+      // transform:[{
+      //   translateY:interpolate(y.value,[0,20,50,60],[0,5,30,65],Extrapolate.CLAMP)
+      // }],
+
+    }
+  })
+  const IconA1=useAnimatedStyle(()=>{
+    return{
+      transform:[{
+        translateY:withTiming(interpolate(y.value,[0,20,50,60],[0,5,30,65],Extrapolate.CLAMP),{duration:60})
+      }],
+
+    }
+  })
+  const IconA2=useAnimatedStyle(()=>{
+    return{
+      transform:[{
+        translateY:withSpring(interpolate(y.value,[0,20,50,60],[0,5,30,65],Extrapolate.CLAMP),{mass:0.5,stiffness:90})
+      }],
+
+    }
+  })
+  const IconA3=useAnimatedStyle(()=>{
+    return{
+      transform:[{
+        translateY:withTiming(interpolate(y.value,[0,20,50,60],[0,5,30,65],Extrapolate.CLAMP),{duration:60})
+      }],
+
+    }
+  })
   const OpacityAnimation =useAnimatedStyle(()=>{
     return{
-      opacity:Change?1:0
+      opacity:Change?withSpring(1):withSpring(0)
     }
   })
 
@@ -95,6 +146,17 @@ const HomeScreen = () => {
         source={{uri:(Change)?(Img2):(Img1)}}
         style={styles.Image}
         />
+        <Animated.View style={[styles.IconList,IconTransform]}>
+          <Animated.View style={[styles.Icon,IconA1]}>
+          <AntDesign name="setting" size={24} color="black" />
+          </Animated.View>
+          <Animated.View style={[styles.Icon,IconA2]}>
+          <AntDesign name="caretdown" size={24} color="black" />
+          </Animated.View>
+          <Animated.View style={[styles.Icon,IconA3]}>
+          <AntDesign name="hearto" size={24} color="black" />
+          </Animated.View>
+        </Animated.View>
         <Animated.Text style={[styles.TextC,OpacityAnimation]}>Virtual try-on </Animated.Text>
         <PanGestureHandler onGestureEvent={gestureHandler}>
         <Animated.View style={[styles.ViewC,animatedStyle]}>
