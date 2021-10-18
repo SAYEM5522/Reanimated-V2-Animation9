@@ -5,6 +5,7 @@ import Header from '../Component/Header';
 import { PanGestureHandler } from 'react-native-gesture-handler';
 import Animated, { Extrapolate, interpolate, runOnJS, useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 import { AntDesign } from '@expo/vector-icons';
+import ItemCollection from '../Component/ItemCollection';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const HeaderHeight=80;
@@ -161,9 +162,12 @@ const HomeScreen = () => {
           </Animated.View>
         </Animated.View>
         <Animated.Text style={[styles.TextC,OpacityAnimation]}>Virtual try-on </Animated.Text>
-        <PanGestureHandler onGestureEvent={gestureHandler}>
+        <PanGestureHandler
+         activeOffsetX={[-30, 30]}
+         activeOffsetY={[-30, 30]}
+        onGestureEvent={gestureHandler}>
         <Animated.View style={[styles.ViewC,animatedStyle]}>
-
+          <ItemCollection/>
         </Animated.View>
         </PanGestureHandler>
       </View>
