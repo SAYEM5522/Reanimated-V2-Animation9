@@ -46,6 +46,23 @@ const styles = StyleSheet.create({
     backgroundColor:'#fff',
     borderRadius:50,
     marginRight:20
+  },
+  Line:{
+    height:1.5,
+    width:(windowWidth/2)+30,
+    backgroundColor:'lightgray',
+    left:5
+  },
+  BestS:{
+    flexDirection:'row',
+    alignItems:'center'
+  },
+  BestST:{
+    fontSize:21,
+    fontWeight:'700',
+    color:'black',
+    left:15,
+    letterSpacing:-0.1,
   }
 })
 const HomeScreen = () => {
@@ -168,6 +185,10 @@ const HomeScreen = () => {
         onGestureEvent={gestureHandler}>
         <Animated.View style={[styles.ViewC,animatedStyle]}>
           <ItemCollection/>
+            <View style={styles.BestS}>
+              <View style={styles.Line}/>
+              <Text style={styles.BestST}>Best Selling</Text>
+            </View>
         </Animated.View>
         </PanGestureHandler>
       </View>
