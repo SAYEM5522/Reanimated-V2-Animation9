@@ -6,6 +6,7 @@ import { PanGestureHandler } from 'react-native-gesture-handler';
 import Animated, { Extrapolate, interpolate, runOnJS, useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 import { AntDesign } from '@expo/vector-icons';
 import ItemCollection from '../Component/ItemCollection';
+import Catagory from '../Component/Catagory';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const HeaderHeight=80;
@@ -63,6 +64,12 @@ const styles = StyleSheet.create({
     color:'black',
     left:15,
     letterSpacing:-0.1,
+  },
+  ComponentL:{
+    flexDirection:'row',
+    alignItems:'center',
+    top:5,
+    paddingHorizontal:5
   }
 })
 const HomeScreen = () => {
@@ -188,6 +195,10 @@ const HomeScreen = () => {
             <View style={styles.BestS}>
               <View style={styles.Line}/>
               <Text style={styles.BestST}>Best Selling</Text>
+            </View>
+            <View style={styles.ComponentL}>
+            <Catagory/>
+            <Catagory/>
             </View>
         </Animated.View>
         </PanGestureHandler>
