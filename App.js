@@ -1,15 +1,14 @@
 
 import React from 'react';
-import { Dimensions, FlatList, Image, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { PanGestureHandler } from 'react-native-gesture-handler';
-import Animated, { Extrapolate, interpolate, useAnimatedGestureHandler, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
+import { StyleSheet } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './Screen/HomeScreen';
 import ItemScreen from './Screen/ItemScreen';
 import ItemScreen2 from './Screen/ItemScreen2';
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+import DetailScreen from './Screen/DetailScreen';
+
 const styles = StyleSheet.create({
 
   
@@ -25,7 +24,7 @@ export default function App() {
         <Stack.Screen options={{headerShown:false}} name="HomeScreen" component={HomeScreen} />
         <Stack.Screen options={{headerShown:false}} name="ItemScreen" component={ItemScreen} />
         <Stack.Screen options={{headerShown:false}} name="ItemScreen2" component={ItemScreen2} />
-
+        <Stack.Screen options={{headerShown:false}} name="DetailScreen" component={DetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

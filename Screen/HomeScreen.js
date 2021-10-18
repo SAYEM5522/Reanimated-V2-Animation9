@@ -135,7 +135,7 @@ const HomeScreen = () => {
     }
   })
   const onPress=()=>{
-    navigation.push("ItemScreen")
+    navigation.push("DetailScreen")
   }
   const IconA1=useAnimatedStyle(()=>{
     return{
