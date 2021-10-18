@@ -10,6 +10,8 @@ import Catagory from '../Component/Catagory';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const HeaderHeight=80;
+const image1="https://i2-prod.mirror.co.uk/incoming/article22028564.ece/ALTERNATES/s1200c/0_hp-teaser-sg-m-desktop.jpg"
+const image2="https://images.unsplash.com/photo-1609902726285-00668009f004?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z2lybCUyMHdpdGglMjBzdW5nbGFzc2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
 const styles = StyleSheet.create({
   Image:{
     height:windowHeight/2,
@@ -73,8 +75,8 @@ const styles = StyleSheet.create({
   }
 })
 const HomeScreen = () => {
-  const Img1="https://res.cloudinary.com/liingo/image/upload/q_85/v1585003269/content/our-tools-vto.jpg"
-  const Img2="https://i.pinimg.com/474x/b2/c3/e6/b2c3e69ca5a9804424770f52a0574807.jpg"
+  const Img1="https://c2.peakpx.com/wallpaper/107/26/326/2k-dark-guy-male-man-wallpaper.jpg"
+  const Img2="https://images.unsplash.com/photo-1501441858156-e505fb04bfbc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c3VuZ2xhc3NlcyUyMHdvbWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
   const navigation = useNavigation();
   const y = useSharedValue(0);
   // const Change=useSharedValue(0)
@@ -197,8 +199,8 @@ const HomeScreen = () => {
               <Text style={styles.BestST}>Best Selling</Text>
             </View>
             <View style={styles.ComponentL}>
-            <Catagory/>
-            <Catagory/>
+            <Catagory img={image1} text="Men's collection"/>
+            <Catagory img={image2} text="Women's collection"/>
             </View>
         </Animated.View>
         </PanGestureHandler>

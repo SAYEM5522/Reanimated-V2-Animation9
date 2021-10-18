@@ -42,15 +42,15 @@ const styles = StyleSheet.create({
     alignSelf:'center'
   }
 })
-const Catagory = () => {
+const Catagory = ({img,text}) => {
   return (
     <View style={styles.Container}>
      <Image
-     source={{uri:"https://i2-prod.mirror.co.uk/incoming/article22028564.ece/ALTERNATES/s1200c/0_hp-teaser-sg-m-desktop.jpg"}}
+     source={{uri:img}}
      style={styles.Image}
      />
      <View style={styles.CatagoryName}>
-      <Text style={styles.CatagoryNameT}>Men's collection</Text>
+      <Text style={styles.CatagoryNameT}>{text}</Text>
      </View>
      <View style={styles.TextGo}>
      <Text style={styles.TextGoT}>Go</Text>
