@@ -1,6 +1,7 @@
 import React from 'react'
 import { Dimensions, FlatList, Image, Platform, StyleSheet, Text, View } from 'react-native'
 import Animated, { Extrapolate, interpolate, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
+import BackgroundC from '../Component/BackgroundC';
 import { data } from '../Component/Data'
 import ImageView from '../Component/ImageView';
 const windowWidth = Dimensions.get('window').width;
@@ -37,6 +38,7 @@ const DetailScreen = () => {
   }
   return (
     <View style={styles.Container}>
+     <BackgroundC  translationX={translationX}/>
      <AnimatedFlatlist
       showsHorizontalScrollIndicator={false}
       data={data}

@@ -11,8 +11,7 @@ const styles = StyleSheet.create({
     // marginHorizontal: SPACING*5,
     // padding: SPACING * 2,
     alignItems: 'center',
-    backgroundColor: 'white',
-    borderRadius: 34,
+   
     width: Size+10,
     height: Size *1.47,
  

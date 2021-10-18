@@ -17,30 +17,18 @@
   },
   {
     id:"4",
-    img:"https://designculture.com.br/wp-content/uploads/2017/06/main03.jpg",
+    img:"https://c2.peakpx.com/wallpaper/107/26/326/2k-dark-guy-male-man-wallpaper.jpg",
     name:"Gyme",
     price:"$1000"
   },
   
   {
     id:"5",
-    img:"https://media.gq.com/photos/5d39cba1a66ff60008318e25/16:9/w_2560%2Cc_limit/stearns-tout.jpg",
+    img:"https://images.unsplash.com/photo-1501441858156-e505fb04bfbc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c3VuZ2xhc3NlcyUyMHdvbWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     name:" Comunicate",
     price:"$1200"
   },
-  {
-    id:"6",
-    img:"https://weart.co/v2/wp-content/uploads/2017/05/WE_ART_DAVID_BLACK_1705_3.jpg",
-   
-    name:"Shoping",
-    price:"$1000"
-  },
-  {
-    id:"7",
-    img:"https://weart.co/v2/wp-content/uploads/2017/05/WE_ART_DAVID_BLACK_1705_2.jpg",
-    name:"Grocery",
-    price:"$1000"
-  },
+ 
   {
     id:'8',
     flag:true
