@@ -29,10 +29,9 @@ const DetailScreen = () => {
       return <View style={{ width: EMPTY_ITEM_SIZE }} />;
     }
     return(
-      <>
-      
+      <View style={{top:70}}>
       <ImageView item={item} index={index} translationX={translationX}/>
-      </>
+      </View>
       
     )
   }
