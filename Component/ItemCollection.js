@@ -1,5 +1,7 @@
 import React from 'react'
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+const windowWidth = Dimensions.get('window').width;
+
 const  data=[
   {
     id:"1",
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
     resizeMode:'contain'
   },
   BottomSheetImage:{
-    paddingHorizontal:20
+    paddingHorizontal:18
   },
   Text1:{
     fontSize:16,
@@ -73,11 +75,19 @@ const styles = StyleSheet.create({
     fontWeight:'600',
     top:12,
     color:'black'
-  }
+  },
+  Line:{
+    height:1.5,
+    width:(windowWidth/2)-50,
+    backgroundColor:'lightgray',
+    left:(windowWidth/2)+25,
+    top:25
+  },
 })
 const ItemCollection = () => {
   return (
     <View style={styles.Container}>
+        <View style={styles.Line}/>
      <Text style={styles.TextHeader}>New Collection</Text>
      <View style={{height:200,}}>
         <ScrollView
