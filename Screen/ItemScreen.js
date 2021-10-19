@@ -69,7 +69,7 @@ const onPress=()=>{
      },
     ],
      left:Exciting.value?withTiming(-170,{duration:150},(_isFinished)=>_isFinished?Exciting.value=withTiming(false,{duration:400}):Exciting.value=true):0,
-     opacity:Exciting.value?withTiming(interpolate(Y.value,[0,1],[1,0],Extrapolate.CLAMP),{duration:100}):withTiming(interpolate(Y.value,[0,0.1,1],[0,0.1,1],Extrapolate.CLAMP),{duration:600}),
+     opacity:Exciting.value?withTiming(interpolate(Y.value,[0,1],[1,0.0001],Extrapolate.CLAMP),{duration:300}):withTiming(interpolate(Y.value,[0,0.1,1],[0,0.1,1],Extrapolate.CLAMP),{duration:600}),
     }
   })
   const ImageAnimatin2 =useAnimatedStyle(()=>{
@@ -77,7 +77,7 @@ const onPress=()=>{
      transform:[{
        translateY:withTiming( interpolate(Y.value,[0,1],[windowHeight,windowHeight/3.8],Extrapolate.CLAMP),{duration:650})
      }],
-     opacity:Exciting.value?withTiming(interpolate(Y.value,[0,1],[1,0],Extrapolate.CLAMP),{duration:100}):withTiming(interpolate(Y.value,[0,0.1,1],[0,0.1,1],Extrapolate.CLAMP),{duration:600}),
+     opacity:Exciting.value?withTiming(interpolate(Y.value,[0,1],[1,0.0001],Extrapolate.CLAMP),{duration:300}):withTiming(interpolate(Y.value,[0,0.1,1],[0,0.1,1],Extrapolate.CLAMP),{duration:600}),
      right:Exciting.value?withTiming(-170,{duration:150},(_isFinished)=>_isFinished?Exciting.value=withTiming(false,{duration:400}):Exciting.value=true):0,
 
     }

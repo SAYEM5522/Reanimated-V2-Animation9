@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     borderRadius:5
   },
   ImageC:{
-    // top:windowHeight,
+    
   },
   Text:{
     fontSize:25,
@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     fontWeight:'700',
     left:35,
     top:8
-    
   },
   Text2:{
     fontSize:17,
@@ -43,8 +42,17 @@ const styles = StyleSheet.create({
     fontSize:20,
     fontWeight:'700',
     left:30,
-    top:50
+    top:50,
+   
+  },
+  Textc1:{
+    color:'gray',
+    fontSize:20,
+    fontWeight:'700',
+    left:30,
+    top:50,
   }
+
 })
 
 const ItemScreen2 = () => {
@@ -65,7 +73,7 @@ const ImageAnimatin =useAnimatedStyle(()=>{
      translateY:withTiming( interpolate(Y.value,[0,1],[windowHeight,windowHeight/3.8],Extrapolate.CLAMP),{duration:600},)
    },
   ],
-   left:Exciting.value?withTiming(-170,{duration:150},(_isFinished)=>_isFinished?Exciting.value=withTiming(false,{duration:400}):Exciting.value=true):0,
+   left:Exciting.value?withTiming(-170,{duration:150},(_isFinished)=>_isFinished?Exciting.value=withTiming(false,{duration:500}):Exciting.value=true):0,
    opacity:Exciting.value?withTiming(interpolate(Y.value,[0,1],[1,0],Extrapolate.CLAMP),{duration:100}):withTiming(interpolate(Y.value,[0,0.1,1],[0,0.1,1],Extrapolate.CLAMP),{duration:600}),
   }
 })
@@ -75,28 +83,31 @@ const ImageAnimatin2 =useAnimatedStyle(()=>{
      translateY:withTiming( interpolate(Y.value,[0,1],[windowHeight,windowHeight/3.8],Extrapolate.CLAMP),{duration:650})
    }],
    opacity:Exciting.value?withTiming(interpolate(Y.value,[0,1],[1,0],Extrapolate.CLAMP),{duration:100}):withTiming(interpolate(Y.value,[0,0.1,1],[0,0.1,1],Extrapolate.CLAMP),{duration:600}),
-   right:Exciting.value?withTiming(-170,{duration:150},(_isFinished)=>_isFinished?Exciting.value=withTiming(false,{duration:400}):Exciting.value=true):0,
+   right:Exciting.value?withTiming(-170,{duration:150},(_isFinished)=>_isFinished?Exciting.value=withTiming(false,{duration:500}):Exciting.value=true):0,
 
   }
 })
 const TextAnimation=useAnimatedStyle(()=>{
   return{
     transform:[{
-      translateY:withTiming( interpolate(Y.value,[0,1],[-60,0],Extrapolate.CLAMP),{duration:500})
+      translateY:withTiming( interpolate(Y.value,[0,1],[-60,0],Extrapolate.CLAMP),{duration:720})
     }]
   }
 })
 const TextAnimation1=useAnimatedStyle(()=>{
   return{
     transform:[{
-      translateX:withTiming( interpolate(Y.value,[0,1],[-70,0],Extrapolate.CLAMP),{duration:550})
+      translateX:withTiming( interpolate(Y.value,[0,1],[-30,0],Extrapolate.CLAMP),{duration:650})
     }]
   }
 })
   return (
     <View style={styles.Container} >
       <Header color={"black"} flag={true}/>
-      <Animated.Text style={[styles.TextC,TextAnimation1]}>I'm locking for Sunglasses for ...</Animated.Text>
+      <View style={{flexDirection:'row',alignItems:'center'}}>
+      <Text style={[styles.TextC]}>I'm locking for</Text>
+      <Animated.Text style={[styles.Textc1,TextAnimation1]}> Sunglasses for ...</Animated.Text>
+      </View>
       <Animated.Text style={[styles.Text,TextAnimation]}>And who are you shopping for?</Animated.Text>
       <View style={{flexDirection:'row',justifyContent:'space-evenly'}}>
        
@@ -114,7 +125,7 @@ const TextAnimation1=useAnimatedStyle(()=>{
         source={{uri:'https://images.unsplash.com/photo-1501441858156-e505fb04bfbc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c3VuZ2xhc3NlcyUyMHdvbWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80'}}
         style={styles.Image}
         />
-         <Text style={styles.Text2}>Weman</Text>
+         <Text style={styles.Text2}>Woman</Text>
       </Animated.View>
       </View>
     </View>
