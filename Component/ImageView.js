@@ -53,19 +53,7 @@ const ImageView = ({item,index,translationX}) => {
     ]
     }
   })
-  const TransForm1=useAnimatedStyle(()=>{
-    return{
-      transform:[
-      //   {
-      //   translateY:interpolate(translationX.value,[(index-2)*(Size*1.25),(index-1)*(Size*1.25),(index)*(Size*1.25)],[0,-65,0],Extrapolate.CLAMP)
-      // },
-      // {
-      //   translateX:withDelay(1000,withSpring(interpolate(Y.value,[0,1],[windowWidth/2,0],Extrapolate.CLAMP)))
-      //   // withDelay(interpolate(Y.value,[0,1],[windowWidth/2,0],Extrapolate.CLAMP),{duration:850})
-      // }
-    ]
-    }
-  })
+ 
   return(
     
       <View style={styles.ImageContainer}>
