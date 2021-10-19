@@ -127,15 +127,10 @@ const HomeScreen = () => {
     
       top:80,
       opacity:Change?1:0,
-      // interpolate(y.value,[0,60],[150,80],Extrapolate.CLAMP),
-      // transform:[{
-      //   translateY:interpolate(y.value,[0,20,50,60],[0,5,30,65],Extrapolate.CLAMP)
-      // }],
-
     }
   })
   const onPress=()=>{
-    navigation.push("DetailScreen")
+    navigation.push("ItemScreen")
   }
   const IconA1=useAnimatedStyle(()=>{
     return{
@@ -170,7 +165,7 @@ const HomeScreen = () => {
   return (
     <View>
       <StatusBar/>
-      <Header/>
+      <Header color={"white"}/>
       <View>
         <Image
         source={{uri:(Change)?(Img2):(Img1)}}

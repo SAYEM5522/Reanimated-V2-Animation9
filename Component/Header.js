@@ -3,13 +3,13 @@ import { StyleSheet, Text, View } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-const Header = () => {
+const Header = ({color,flag}) => {
   return (
     <View style={styles.Header}>
-     <AntDesign name="menu-fold" size={24} color="white" />
+     <AntDesign name="menu-fold" size={24} color={color} />
      <View style={styles.Icon}>
-     <EvilIcons name="search" size={33} style={{right:20}} color="white" />
-     <Ionicons name="lock-closed-outline" size={24} color="white" />
+     <EvilIcons name="search" size={33} style={{right:20}} color={color} />
+     <Ionicons name="lock-closed-outline" size={24} color={color} />
      </View>
     </View>
   )
