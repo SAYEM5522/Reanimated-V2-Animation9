@@ -6,6 +6,7 @@ import { data } from '../Component/Data'
 import ImageView from '../Component/ImageView';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+import { AntDesign } from '@expo/vector-icons';
 const Size=windowWidth*0.55
 const EMPTY_ITEM_SIZE = (windowWidth - Size) / 2;
 
@@ -13,8 +14,15 @@ const SPACING = 10;
 const styles = StyleSheet.create({
   Container:{
     flex:1,
-    backgroundColor:'white'
+    backgroundColor:'white',
+    zIndex:-1000
   },
+  Icon:{
+    position:'absolute',
+    top:20,
+    left:20,
+    zIndex:1000
+  }
 
 })
 const DetailScreen = () => {
@@ -37,6 +45,7 @@ const DetailScreen = () => {
   }
   return (
     <View style={styles.Container}>
+    <AntDesign name="close" style={styles.Icon} size={28} color="white" />
      <BackgroundC  translationX={translationX}/>
      <AnimatedFlatlist
       showsHorizontalScrollIndicator={false}
