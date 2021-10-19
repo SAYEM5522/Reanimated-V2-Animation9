@@ -102,11 +102,14 @@ const onPress=()=>{
       <Animated.Text style={[styles.TextC,TextAnimation1]}>I'm locking for ...</Animated.Text>
       <Animated.Text style={[styles.Text,TextAnimation]}>So, What are you looking for?</Animated.Text>
       <View style={{flexDirection:'row',justifyContent:'space-evenly'}}>
+       
       <Animated.View  style={[styles.ImageC,ImageAnimatin]}>
+      <Pressable onPress={onPress}>
         <Image
         source={{uri:'https://i.pinimg.com/736x/e7/d3/08/e7d308240242be3ccb46f93b7631d97c.jpg'}}
         style={styles.Image}
         />
+        </Pressable>
         <Text style={styles.Text1}>Sunglasses</Text>
       </Animated.View>
       <Animated.View style={[styles.ImageC,ImageAnimatin2]}>
