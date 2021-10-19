@@ -15,7 +15,7 @@ const BACKDROP_HEIGHT = windowHeight;
  },
  {
    id:"2",
-   img:"https://images.unsplash.com/photo-1609902726285-00668009f004?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z2lybCUyMHdpdGglMjBzdW5nbGFzc2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+   img:"https://media.istockphoto.com/photos/portrait-of-an-african-american-young-woman-in-sunglasses-isolated-on-picture-id1201881974?k=20&m=1201881974&s=612x612&w=0&h=X41gI8ph_9i3CjyPeorHj9U95g8aeNQPX79_CEpx4nc=",
    name:"Food & Drinks",
    price:"$1000"
  },

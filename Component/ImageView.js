@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
-import Animated, { Extrapolate, interpolate, useAnimatedStyle } from 'react-native-reanimated'
+import Animated, { Easing, Extrapolate, interpolate, useAnimatedStyle, useSharedValue, withDelay, withSpring, withTiming } from 'react-native-reanimated'
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const Size=windowWidth*0.55
@@ -36,11 +36,34 @@ const styles = StyleSheet.create({
   }
 })
 const ImageView = ({item,index,translationX}) => {
+  const Y=useSharedValue(0);
+  useEffect(()=>{
+    Y.value=1
+  },[Y.value])
   const TransForm=useAnimatedStyle(()=>{
     return{
-      transform:[{
+      transform:[
+        {
+          translateX:withTiming(interpolate(Y.value,[0,1],[windowWidth/2,0]),{duration:700, easing: Easing.exp})
+        },
+        {
         translateY:interpolate(translationX.value,[(index-2)*(Size*1.25),(index-1)*(Size*1.25),(index)*(Size*1.25)],[0,-65,0],Extrapolate.CLAMP)
-      }]
+      },
+  
+    ]
+    }
+  })
+  const TransForm1=useAnimatedStyle(()=>{
+    return{
+      transform:[
+      //   {
+      //   translateY:interpolate(translationX.value,[(index-2)*(Size*1.25),(index-1)*(Size*1.25),(index)*(Size*1.25)],[0,-65,0],Extrapolate.CLAMP)
+      // },
+      // {
+      //   translateX:withDelay(1000,withSpring(interpolate(Y.value,[0,1],[windowWidth/2,0],Extrapolate.CLAMP)))
+      //   // withDelay(interpolate(Y.value,[0,1],[windowWidth/2,0],Extrapolate.CLAMP),{duration:850})
+      // }
+    ]
     }
   })
   return(
