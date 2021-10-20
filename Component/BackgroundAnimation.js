@@ -24,6 +24,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     zIndex:1000
+  },
+  TextName:{
+    position:'absolute',
+    color:'white',
+    fontSize:39,
+    fontWeight:"bold",
+    top:80,
+    left:windowWidth/3,
+    width:windowWidth/2
   }
 })
 const BackgroundAnimation = ({item,index,translationX}) => {
@@ -31,6 +40,15 @@ const BackgroundAnimation = ({item,index,translationX}) => {
     return{
 
       width:interpolate((translationX.value),[(index - 1) * Size*1.25, (index ) * Size*1.25],[0,windowWidth],Extrapolate.CLAMP)
+    }
+  })
+  
+  const TextTransForm=useAnimatedStyle(()=>{
+    return{
+
+      transform:[{
+        translateX:interpolate((translationX.value),[(index ) * Size*1.25,(index - 1) * Size*1.25],[0,-windowWidth],Extrapolate.CLAMP)
+      }]
     }
   })
   return (
@@ -42,6 +60,7 @@ const BackgroundAnimation = ({item,index,translationX}) => {
           source={{ uri: item.img }}
           style={styles.Image}
         />
+        <Animated.Text style={[styles.TextName,TextTransForm]}>{item.name}</Animated.Text>
           <LinearGradient
         colors={["transparent",'black', 'black']}
         style={styles.LinearGradient}
