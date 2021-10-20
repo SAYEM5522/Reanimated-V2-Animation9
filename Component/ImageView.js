@@ -81,7 +81,7 @@ const ImageView = ({item,index,translationX}) => {
     transform:[{
     translateY:withTiming(interpolate(Flag.value,[0,1],[-1,0],Extrapolate.CLAMP),{duration:900})
     }],
-    opacity:withTiming(interpolate(Flag.value,[0,0.5,1],[0,0.5,1]),{duration:600})
+    opacity:withTiming(interpolate(Flag.value,[0,1],[0,1]),{duration:700})
    
   }
 }
@@ -95,7 +95,7 @@ const ImageView = ({item,index,translationX}) => {
               <Animated.View style={ImageAnimation}>
               <Pressable onPress={onPress}>
                 <Animated.View style={[styles.RotateIMage,RotateAnimation]}>
-                  <Product/>
+                  <Product Flag={Flag.value}/>
                 </Animated.View>
               <AntDesign style={styles.Icon} name="hearto" size={24} color="white" />
              
