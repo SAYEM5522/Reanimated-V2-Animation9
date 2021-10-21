@@ -42,7 +42,15 @@ const styles = StyleSheet.create({
     width:Size,
     borderRadius:24,
     zIndex:1000
+  },
+  TextContainer:{
+    color:'white',
+    fontSize:16,
+    fontWeight:'500',
+    width:Size+50
+
   }
+
 })
 const ImageView = ({item,index,translationX}) => {
   const Y=useSharedValue(0);
@@ -62,7 +70,20 @@ const ImageView = ({item,index,translationX}) => {
   
     ]
     }
-  })
+  },[Y.value,translationX.value])
+  const TransForm1=useAnimatedStyle(()=>{
+    return{
+      transform:[
+        {
+          translateX:withTiming(interpolate(Y.value,[0,1],[windowWidth/2,0]),{duration:700, easing: Easing.exp})
+        },
+        {
+        translateY:interpolate(translationX.value,[(index-2)*(Size*1.25),(index-1)*(Size*1.25),(index)*(Size*1.25)],[0,-45,0],Extrapolate.CLAMP)
+      },
+  
+    ]
+    }
+  },[Y.value,translationX.value])
  const onPress=()=>{
   
    Flag.value=(!Flag.value)
@@ -87,7 +108,7 @@ const ImageView = ({item,index,translationX}) => {
 }
 )
   return(
-    
+      <>
       <View style={styles.ImageContainer}>
             <Animated.View
               style={[styles.ImageView,TransForm]}
@@ -108,6 +129,8 @@ const ImageView = ({item,index,translationX}) => {
               </Animated.View>
                 </Animated.View>
           </View>
+          <Animated.Text style={[styles.TextContainer,TransForm1]}>{item.des}</Animated.Text>
+          </>
     
   )
 }

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Dimensions, FlatList, Image, Platform, StyleSheet, Text, View } from 'react-native'
-import Animated, { Extrapolate, interpolate, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
+import Animated, {useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import BackgroundC from '../Component/BackgroundC';
 import { data } from '../Component/Data'
 import ImageView from '../Component/ImageView';
@@ -22,16 +22,17 @@ const styles = StyleSheet.create({
     top:20,
     left:20,
     zIndex:1000
-  }
-
+  },
+ 
 })
 const DetailScreen = () => {
   const AnimatedFlatlist=Animated.createAnimatedComponent(FlatList)
+ 
   const translationX = useSharedValue(0);
   const scrollHandler = useAnimatedScrollHandler((event) => {
     translationX.value = event.contentOffset.x;
   });
-  
+ 
   const renderItem=({item,index})=>{
     if (item?.flag) {
       return <View style={{ width: EMPTY_ITEM_SIZE }} />;
@@ -39,6 +40,7 @@ const DetailScreen = () => {
     return(
       <View style={{top:70}}>
       <ImageView item={item} index={index} translationX={translationX}/>
+    
       </View>
       
     )
