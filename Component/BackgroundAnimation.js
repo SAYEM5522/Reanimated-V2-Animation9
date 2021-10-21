@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     color:'white',
     fontSize:39,
     fontWeight:"bold",
-    top:80,
+    top:60,
     left:windowWidth/3,
     width:windowWidth/2
   }

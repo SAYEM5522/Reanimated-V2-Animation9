@@ -9,7 +9,7 @@ const windowHeight = Dimensions.get('window').height;
 import { AntDesign } from '@expo/vector-icons';
 const Size=windowWidth*0.55
 const EMPTY_ITEM_SIZE = (windowWidth - Size) / 2;
-
+const ButtonHeight=55
 const SPACING = 10;
 const styles = StyleSheet.create({
   Container:{
@@ -23,6 +23,21 @@ const styles = StyleSheet.create({
     left:20,
     zIndex:1000
   },
+  Button:{
+    position:'absolute',
+    bottom:20,
+    alignSelf:'center',
+    height:ButtonHeight,
+    width:'76%',
+    backgroundColor:'white',
+    borderRadius:10
+  },
+  ButtonText:{
+    alignSelf:'center',
+    top:ButtonHeight/4.5,
+    fontSize:20,
+    fontWeight:'700'
+  }
  
 })
 const DetailScreen = () => {
@@ -49,6 +64,9 @@ const DetailScreen = () => {
     <View style={styles.Container}>
     <AntDesign name="close" style={styles.Icon} size={28} color="white" />
      <BackgroundC  translationX={translationX}/>
+     <View style={styles.Button}>
+       <Text style={styles.ButtonText}>Try Glasses</Text>
+     </View>
      <AnimatedFlatlist
       showsHorizontalScrollIndicator={false}
       data={data}

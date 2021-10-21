@@ -8,6 +8,7 @@ const SPACING = 10;
 const EMPTY_ITEM_SIZE = (windowWidth - Size) / 2;
 import { AntDesign } from '@expo/vector-icons';
 import Product from './Product';
+import Rating from './Rating';
 const styles = StyleSheet.create({
   ImageView:{
     // marginHorizontal: SPACING*5,
@@ -130,6 +131,7 @@ const ImageView = ({item,index,translationX}) => {
                 </Animated.View>
           </View>
           <Animated.Text style={[styles.TextContainer,TransForm1]}>{item.des}</Animated.Text>
+          <Rating rating={item.rating}/>
           </>
     
   )
