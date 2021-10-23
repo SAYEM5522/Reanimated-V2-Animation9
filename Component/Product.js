@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     height:90,
     width:90,
     alignSelf:'center',
-    left:Size/4.5,
+    left:-30,
     resizeMode:'contain'
   },
   RoundBox1:{
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     alignItems:'center',
     alignSelf:'center',
-    left:Size/5.5,
+    left:-30,
     width:100,
     justifyContent:'space-between',
     top:15
@@ -49,8 +49,30 @@ const styles = StyleSheet.create({
   Text1:{
     fontSize:16,
     fontWeight:'700',
-    left:30,
+    left:-30,
     top:25
+  },
+  Text2:{
+    alignSelf:'center',
+    fontWeight:'700',
+    left:-30,
+    top:50,
+    fontSize:20
+  },
+  Card:{
+    height:50,
+    width:140,
+    backgroundColor:'black',
+    top:100,
+    left:-20,
+    borderRadius:10 
+  },
+  CardText:{
+    color:'white',
+    alignSelf:'center',
+    top:10,
+    fontSize:15,
+    fontWeight:'700'
   }
 })
 const Product = ({Flag}) => {
@@ -62,7 +84,7 @@ const Product = ({Flag}) => {
     }
   })
   return (
-    <View style={styles.Container}>
+    <Animated.View style={[styles.Container,Rotation]}>
      <Image
      source={{uri:'https://cdn.pixabay.com/photo/2014/02/14/08/20/sunglasses-265839_960_720.jpg'}}
      style={styles.Image}
@@ -72,8 +94,12 @@ const Product = ({Flag}) => {
      <View style={styles.RoundBox2}/>
      <View style={styles.RoundBox3}/>
      </View>
-     <Animated.Text style={[styles.Text1,Rotation]}>100% UV protection</Animated.Text>
-    </View>
+     <Animated.Text style={[styles.Text1,]}>100% UV protection</Animated.Text>
+     <Animated.Text style={[styles.Text2,]}>$268</Animated.Text>
+     <View style={styles.Card}>
+       <Text style={styles.CardText}>Add to cart</Text>
+     </View>
+    </Animated.View>
   )
 }
 

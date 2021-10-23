@@ -7,6 +7,7 @@ import ImageView from '../Component/ImageView';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 const Size=windowWidth*0.55
 const EMPTY_ITEM_SIZE = (windowWidth - Size) / 2;
 const ButtonHeight=55
@@ -42,11 +43,15 @@ const styles = StyleSheet.create({
 })
 const DetailScreen = () => {
   const AnimatedFlatlist=Animated.createAnimatedComponent(FlatList)
+  const navigation = useNavigation();
  
   const translationX = useSharedValue(0);
   const scrollHandler = useAnimatedScrollHandler((event) => {
     translationX.value = event.contentOffset.x;
   });
+  const onPress=()=>{
+    navigation.goBack()
+  }
  
   const renderItem=({item,index})=>{
     if (item?.flag) {
@@ -62,7 +67,7 @@ const DetailScreen = () => {
   }
   return (
     <View style={styles.Container}>
-    <AntDesign name="close" style={styles.Icon} size={28} color="white" />
+    <AntDesign name="close" style={styles.Icon} onPress={onPress} size={28} color="white" />
      <BackgroundC  translationX={translationX}/>
      <View style={styles.Button}>
        <Text style={styles.ButtonText}>Try Glasses</Text>
