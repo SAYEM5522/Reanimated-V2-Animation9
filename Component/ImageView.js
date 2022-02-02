@@ -95,7 +95,11 @@ const ImageView = ({item,index,translationX}) => {
    return{
      transform:[{
        rotateY:withTiming(interpolate(Flag.value,[0,1],outPut,Extrapolate.CLAMP)+"deg",{duration:900})
-     }]
+
+     },
+    {
+      perspective:1000
+    }]
    }
  })
  const RotateAnimation=useAnimatedStyle(()=>{
@@ -103,7 +107,7 @@ const ImageView = ({item,index,translationX}) => {
     transform:[{
     translateY:withTiming(interpolate(Flag.value,[0,1],[-1,0],Extrapolate.CLAMP),{duration:900})
     }],
-    opacity:withTiming(interpolate(Flag.value,[0,1],[0,1]),{duration:700})
+    opacity:withTiming(interpolate(Flag.value,[0,1],[0,1]),{duration:1100})
    
   }
 }
